@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F244E3241E27AC3D001F6AC4 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244E3231E27AC3D001F6AC4 /* MealsTableViewController.swift */; };
+		F26D76691E25558800EB34D2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D76681E25558800EB34D2 /* Meal.swift */; };
+		F26D766B1E2555A000EB34D2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D766A1E2555A000EB34D2 /* Item.swift */; };
 		F2E25F5B1E23B7D700A5E557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E25F5A1E23B7D700A5E557 /* AppDelegate.swift */; };
 		F2E25F5D1E23B7D700A5E557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E25F5C1E23B7D700A5E557 /* ViewController.swift */; };
 		F2E25F601E23B7D700A5E557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E25F5E1E23B7D700A5E557 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F244E3231E27AC3D001F6AC4 /* MealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
+		F26D76681E25558800EB34D2 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		F26D766A1E2555A000EB34D2 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F2E25F571E23B7D700A5E557 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E25F5A1E23B7D700A5E557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E25F5C1E23B7D700A5E557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 		F2E25F761E23B7D800A5E557 /* eggplant-brownieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eggplant-brownieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E25F7A1E23B7D800A5E557 /* eggplant_brownieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eggplant_brownieUITests.swift; sourceTree = "<group>"; };
 		F2E25F7C1E23B7D800A5E557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F6E7411E2401DD007EB83B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +81,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F26D76651E2554B800EB34D2 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F26D76681E25558800EB34D2 /* Meal.swift */,
+				F26D766A1E2555A000EB34D2 /* Item.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		F26D76661E2554E200EB34D2 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				F2E25F5C1E23B7D700A5E557 /* ViewController.swift */,
+				F244E3231E27AC3D001F6AC4 /* MealsTableViewController.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		F26D76671E2554F000EB34D2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F2E25F5E1E23B7D700A5E557 /* Main.storyboard */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		F2E25F4E1E23B7D700A5E557 = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +130,11 @@
 		F2E25F591E23B7D700A5E557 /* eggplant-brownie */ = {
 			isa = PBXGroup;
 			children = (
+				F26D76671E2554F000EB34D2 /* views */,
+				F26D76661E2554E200EB34D2 /* viewcontrollers */,
+				F26D76651E2554B800EB34D2 /* models */,
 				F2E25F5A1E23B7D700A5E557 /* AppDelegate.swift */,
-				F2E25F5C1E23B7D700A5E557 /* ViewController.swift */,
-				F2E25F5E1E23B7D700A5E557 /* Main.storyboard */,
+				F2F6E7411E2401DD007EB83B /* MyPlayground.playground */,
 				F2E25F611E23B7D700A5E557 /* Assets.xcassets */,
 				F2E25F631E23B7D700A5E557 /* LaunchScreen.storyboard */,
 				F2E25F661E23B7D700A5E557 /* Info.plist */,
@@ -259,7 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F244E3241E27AC3D001F6AC4 /* MealsTableViewController.swift in Sources */,
+				F26D766B1E2555A000EB34D2 /* Item.swift in Sources */,
 				F2E25F5D1E23B7D700A5E557 /* ViewController.swift in Sources */,
+				F26D76691E25558800EB34D2 /* Meal.swift in Sources */,
 				F2E25F5B1E23B7D700A5E557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +541,7 @@
 				F2E25F811E23B7D800A5E557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2E25F821E23B7D800A5E557 /* Build configuration list for PBXNativeTarget "eggplant-brownieTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +550,7 @@
 				F2E25F841E23B7D800A5E557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2E25F851E23B7D800A5E557 /* Build configuration list for PBXNativeTarget "eggplant-brownieUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +559,7 @@
 				F2E25F871E23B7D800A5E557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
