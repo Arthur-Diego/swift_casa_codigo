@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Metodo que sobrescreve e cria um botao em tempo de execução
         e atribui a ele algunas propriedades
         e coloca ele num Selector
-    */
+    */ //View Carregada
     override func viewDidLoad() {	
        
         let newItemButton = UIBarButtonItem(title: "new item", style: UIBarButtonItemStyle.plain, target: self, action: Selector("showNewItem"))
@@ -51,31 +51,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationItem.rightBarButtonItem = newItemButton
         
     }
-    
     func addNew(item: Item){
         items.append(item)
-        
+        //Verifica e atribui ao msm tempo se o tableView está null caso não redesenha a tabela, senão mostra mensagem de erro
         if let table = tableView {
             table.reloadData()
         } else {
             Alert(controller: self).show()
             
         }
-       
     }
     
-    /*
-        @IBAction listener de ação, navega para a view selecionada
-     */
-    @IBAction func showNewItem(){
-        let newItem = NewItemViewController(delegate2: self)
-        if let navigation = navigationController{
-            navigation.pushViewController(newItem, animated: true)
-        }else{
-            Alert(controller: self).show()
-            
-        }
-    }
+   
     
     func getMeal() -> Meal?{
         if nameField == nil || happinessField == nil{
@@ -92,22 +79,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         meal.items = selected
         print("eaten:\(meal.name)\(meal.happiness)\(meal.items)")
         return meal
-    }
-    
-    @IBAction func add(){
-        if let meal = getMeal() {
-            if let meals = delegate {
-                meals.add(meal: meal)
-            
-                if let navigation = self.navigationController{
-                    navigation.popViewController(animated:true )
-                }else{
-                    Alert(controller: self).show(message: "Erro inesperado, mas a refeição foi adicionada.")
-                }
-            return
-            }
-        }
-        Alert(controller: self).show()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,6 +111,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let position = selected.index(of: items[indexPath.row])
             selected.remove(at: position!)
         }
+    }
+    
+    /*
+     @IBAction listener de ação, navega para a view selecionada
+     Quando eu quiser criar um novo item para minha refeição eu navego a até a view desejada
+     e instancio ela passando minha propria instancia para dentro dela, passando a responsabilidade de
+     adicionar itens ao meu array de refeição para min mesmo e naõ para minha view de destino
+     */
+    @IBAction func showNewItem(){
+        let newItem = NewItemViewController(delegate2: self)//Passa a view para o construtor de newItemViewController
+        if let navigation = navigationController{
+            navigation.pushViewController(newItem, animated: true)
+        }else{
+            Alert(controller: self).show()
+            
+        }
+    }
+    
+    
+    @IBAction func add(){
+        if let meal = getMeal() {
+            if let meals = delegate {
+                meals.add(meal: meal)
+                
+                if let navigation = self.navigationController{
+                    navigation.popViewController(animated:true ) //pop desempilha a tela atual e retorna a anterior
+                }else{
+                    Alert(controller: self).show(message: "Erro inesperado, mas a refeição foi adicionada.")
+                }
+                return
+            }
+        }
+        Alert(controller: self).show()
     }
 
     

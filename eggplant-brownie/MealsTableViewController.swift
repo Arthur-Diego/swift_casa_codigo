@@ -33,19 +33,21 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate  {
             let row = indexPath!.row
             let meal = meals[row]
             
-            //print("meal: \(meal.name) \(meal.happiness)")
+            //Uma outra forma de passar um metodo para a função show
+//            func removeSelected(action: UIAlertAction){
+//                meals.remove(at: row)
+//                tableView.reloadData()
+//            }
             
-            let detalis = UIAlertController(title: meal.name, message: meal.details(), preferredStyle: UIAlertControllerStyle.alert)
+            //Função da classe RemoveMealController passando um closure para remover
+            RemoveMealController(controller: self).show(meal: meal, handler: {action in self.meals.remove(at: row); self.tableView.reloadData()})
             
-            let ok = UIAlertAction(title:  "ok", style: UIAlertActionStyle.cancel, handler: nil)
-            
-            detalis.addAction(ok)
-            present(detalis, animated: true, completion: nil)
         }
     }
     
+    //Setinha no main story board q liga as telas
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        			
+        			//Assim que eu navego da minha MealsTableViewControoler para ViewController eu recupero a intancia da classe ViewController e atribuo ao delegate
         if(segue.identifier == "addMeal"){ //identifica pelo id o segue
             let view = segue.destination as! ViewController //recupera o segue de destino
             

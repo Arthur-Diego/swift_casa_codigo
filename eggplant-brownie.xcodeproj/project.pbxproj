@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F203C02E1E2E81EF00A6A4CD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203C02D1E2E81EF00A6A4CD /* Alert.swift */; };
+		F203C0301E2EB97D00A6A4CD /* RemoveMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203C02F1E2EB97D00A6A4CD /* RemoveMealController.swift */; };
 		F244E3241E27AC3D001F6AC4 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244E3231E27AC3D001F6AC4 /* MealsTableViewController.swift */; };
 		F26D76691E25558800EB34D2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D76681E25558800EB34D2 /* Meal.swift */; };
 		F26D766B1E2555A000EB34D2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D766A1E2555A000EB34D2 /* Item.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		F203C02D1E2E81EF00A6A4CD /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		F203C02F1E2EB97D00A6A4CD /* RemoveMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveMealController.swift; sourceTree = "<group>"; };
 		F244E3231E27AC3D001F6AC4 /* MealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
 		F26D76681E25558800EB34D2 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		F26D766A1E2555A000EB34D2 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				F2FF35201E2959FC00119F4D /* NewItemViewController.swift */,
 				F2FF35211E2959FC00119F4D /* NewItemViewController.xib */,
 				F203C02D1E2E81EF00A6A4CD /* Alert.swift */,
+				F203C02F1E2EB97D00A6A4CD /* RemoveMealController.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				F2E25F5D1E23B7D700A5E557 /* ViewController.swift in Sources */,
 				F26D76691E25558800EB34D2 /* Meal.swift in Sources */,
 				F2E25F5B1E23B7D700A5E557 /* AppDelegate.swift in Sources */,
+				F203C0301E2EB97D00A6A4CD /* RemoveMealController.swift in Sources */,
 				F203C02E1E2E81EF00A6A4CD /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
