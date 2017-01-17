@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealsTableViewController: UITableViewController, AddAMealDelegate {
+class MealsTableViewController: UITableViewController, AddAMealDelegate  {
     
     
     var meals = [Meal(name: "Eggplant brownie", happiness: 5), Meal(name: "Zucchini Muffin", happiness: 3)];
@@ -19,6 +19,29 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate {
         meals.append(meal) //Adiciona no array
         tableView.reloadData()// Redesenha a tabela
         
+    }
+    
+    func showDetails(recognizer: UILongPressGestureRecognizer){
+        if recognizer.state == UIGestureRecognizerState.began{
+         let cell = recognizer.view as! UITableViewCell // Recepera uma view
+            let indexPath = tableView.indexPath(for: cell )// Recupera uma cell da tableView
+            
+            if indexPath == nil{
+                return
+            }
+            
+            let row = indexPath!.row
+            let meal = meals[row]
+            
+            //print("meal: \(meal.name) \(meal.happiness)")
+            
+            let detalis = UIAlertController(title: meal.name, message: meal.details(), preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title:  "ok", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            detalis.addAction(ok)
+            present(detalis, animated: true, completion: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,11 +62,15 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate {
         return meals.count // Retorna quantidade de linhas que a tabela possuir  com base no tamanho do array
     }
     
+    //Criação de célula da table view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let meal = meals[row]
         var cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil) //Intancia o componente CEll
+        //Instancia o UILongPressGestureRecognizer
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.showDetails(recognizer:)))
         
+        cell.addGestureRecognizer(longPress)
         cell.textLabel!.text = meal.name //Atribui o valo do atributo name do objeto meal
         
         return cell

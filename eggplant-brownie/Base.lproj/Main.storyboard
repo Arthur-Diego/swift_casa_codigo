@@ -59,7 +59,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="center" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WlX-US-QfI">
-                                <rect key="frame" x="0.0" y="182" width="320" height="278"/>
+                                <rect key="frame" x="0.0" y="182" width="320" height="322"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="happinessField" destination="rCG-we-Gx9" id="hd6-Um-i92"/>
                         <outlet property="nameField" destination="Qy8-j6-xVq" id="Hpf-P8-gfs"/>
+                        <outlet property="tableView" destination="WlX-US-QfI" id="iyD-0U-tdd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

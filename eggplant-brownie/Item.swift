@@ -7,7 +7,10 @@
 //
 
 import Foundation
-
+/*
+    Classe Item, 
+    Tem nome e calorias
+ */
 class Item: Equatable{
     
     let name: String;

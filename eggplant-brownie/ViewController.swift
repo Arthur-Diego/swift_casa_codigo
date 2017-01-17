@@ -14,6 +14,7 @@ import UIKit
 protocol AddAMealDelegate {
     func add(meal: Meal)
 }
+
 /*
     Interface dataSource para implementar os metodos da table view que estão conectados ao controller
  */
@@ -22,10 +23,11 @@ protocol UITableViewDataSource : NSObjectProtocol{
     
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 }
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddAnItemDelegate {
     
     @IBOutlet var nameField : UITextField!
     @IBOutlet var happinessField : UITextField!
+    @IBOutlet var tableView: UITableView?
     var delegate:AddAMealDelegate?
     
     var items = [Item(name: "Eggplant Brownie", calories: 10),
@@ -37,31 +39,75 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var selected = Array<Item>()
     
-    @IBAction func add(){
+    /*
+        Metodo que sobrescreve e cria um botao em tempo de execução
+        e atribui a ele algunas propriedades
+        e coloca ele num Selector
+    */
+    override func viewDidLoad() {	
+       
+        let newItemButton = UIBarButtonItem(title: "new item", style: UIBarButtonItemStyle.plain, target: self, action: Selector("showNewItem"))
         
+        navigationItem.rightBarButtonItem = newItemButton
+        
+    }
+    
+    func addNew(item: Item){
+        items.append(item)
+        
+        if let table = tableView {
+            table.reloadData()
+        } else {
+            Alert(controller: self).show()
+            
+        }
+       
+    }
+    
+    /*
+        @IBAction listener de ação, navega para a view selecionada
+     */
+    @IBAction func showNewItem(){
+        let newItem = NewItemViewController(delegate2: self)
+        if let navigation = navigationController{
+            navigation.pushViewController(newItem, animated: true)
+        }else{
+            Alert(controller: self).show()
+            
+        }
+    }
+    
+    func getMeal() -> Meal?{
         if nameField == nil || happinessField == nil{
-            return
+            return nil
         }
         let name = nameField!.text
         let happiness:Int! = Int(happinessField.text!)
         
         if happiness == nil{
-            return
+            return nil
         }
         
         let meal = Meal(name: name!, happiness: happiness)
         meal.items = selected
         print("eaten:\(meal.name)\(meal.happiness)\(meal.items)")
-        
-        if delegate == nil{
+        return meal
+    }
+    
+    @IBAction func add(){
+        if let meal = getMeal() {
+            if let meals = delegate {
+                meals.add(meal: meal)
+            
+                if let navigation = self.navigationController{
+                    navigation.popViewController(animated:true )
+                }else{
+                    Alert(controller: self).show(message: "Erro inesperado, mas a refeição foi adicionada.")
+                }
             return
+            }
         }
-        
-        delegate!.add(meal:meal)
-        
-        if let navigation = self.navigationController{
-            navigation.popViewController(animated:true )
-        }
+        Alert(controller: self).show()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +117,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let row = indexPath.row
         let item = items[row]
-        var cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil) //Intancia o componente CEll	
+        var cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil) //Intancia o componente CEll
         
         cell.textLabel!.text = item.name //Atribui o valo do atributo name do objeto Item
         

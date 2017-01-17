@@ -7,7 +7,11 @@
 //
 
 import Foundation
-
+/*
+ Classe refeição
+ Contém nome e felicidade
+ E itens
+ */
 class Meal{
     let name: String;
     let happiness: Int;
@@ -25,5 +29,14 @@ class Meal{
             total += i.calories;
         }
         return total
+    }
+    
+    func details() -> String{
+        var message = "Happiness: \(self.happiness)"
+        
+        for item in self.items {
+            message += "\n * \(item.name) - calories: \(item.calories)"
+        }
+        return message
     }
 }

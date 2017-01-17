@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F203C02E1E2E81EF00A6A4CD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203C02D1E2E81EF00A6A4CD /* Alert.swift */; };
 		F244E3241E27AC3D001F6AC4 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244E3231E27AC3D001F6AC4 /* MealsTableViewController.swift */; };
 		F26D76691E25558800EB34D2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D76681E25558800EB34D2 /* Meal.swift */; };
 		F26D766B1E2555A000EB34D2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D766A1E2555A000EB34D2 /* Item.swift */; };
@@ -17,6 +18,8 @@
 		F2E25F651E23B7D700A5E557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E25F631E23B7D700A5E557 /* LaunchScreen.storyboard */; };
 		F2E25F701E23B7D800A5E557 /* eggplant_brownieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E25F6F1E23B7D800A5E557 /* eggplant_brownieTests.swift */; };
 		F2E25F7B1E23B7D800A5E557 /* eggplant_brownieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E25F7A1E23B7D800A5E557 /* eggplant_brownieUITests.swift */; };
+		F2FF35221E2959FC00119F4D /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FF35201E2959FC00119F4D /* NewItemViewController.swift */; };
+		F2FF35231E2959FC00119F4D /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2FF35211E2959FC00119F4D /* NewItemViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F203C02D1E2E81EF00A6A4CD /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F244E3231E27AC3D001F6AC4 /* MealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
 		F26D76681E25558800EB34D2 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		F26D766A1E2555A000EB34D2 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		F2E25F7A1E23B7D800A5E557 /* eggplant_brownieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eggplant_brownieUITests.swift; sourceTree = "<group>"; };
 		F2E25F7C1E23B7D800A5E557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F6E7411E2401DD007EB83B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		F2FF35201E2959FC00119F4D /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		F2FF35211E2959FC00119F4D /* NewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				F2E25F5E1E23B7D700A5E557 /* Main.storyboard */,
+				F2FF35201E2959FC00119F4D /* NewItemViewController.swift */,
+				F2FF35211E2959FC00119F4D /* NewItemViewController.xib */,
+				F203C02D1E2E81EF00A6A4CD /* Alert.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 			files = (
 				F2E25F651E23B7D700A5E557 /* LaunchScreen.storyboard in Resources */,
 				F2E25F621E23B7D700A5E557 /* Assets.xcassets in Resources */,
+				F2FF35231E2959FC00119F4D /* NewItemViewController.xib in Resources */,
 				F2E25F601E23B7D700A5E557 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,9 +306,11 @@
 			files = (
 				F244E3241E27AC3D001F6AC4 /* MealsTableViewController.swift in Sources */,
 				F26D766B1E2555A000EB34D2 /* Item.swift in Sources */,
+				F2FF35221E2959FC00119F4D /* NewItemViewController.swift in Sources */,
 				F2E25F5D1E23B7D700A5E557 /* ViewController.swift in Sources */,
 				F26D76691E25558800EB34D2 /* Meal.swift in Sources */,
 				F2E25F5B1E23B7D700A5E557 /* AppDelegate.swift in Sources */,
+				F203C02E1E2E81EF00A6A4CD /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
